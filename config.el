@@ -48,6 +48,9 @@
   (setq evil-escape-key-sequence "jk"
         evil-escape-delay 0.2))
 
+;; format on save
+(setq +format-on-save-enabled-modes t)
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `with-eval-after-load' block, otherwise Doom's defaults may override your
 ;; settings. E.g.
