@@ -88,4 +88,16 @@
 ;; Python configuration
 (after! eglot
   (add-to-list 'eglot-server-programs
-               '(python-mode . ("pyright-langserver" "--stdio"))))
+               '(python-mode . ("pyright-langserver" "--stdio")))
+  (add-to-list 'eglot-server-programs
+               '(sql-mode . ("sqls"))))
+
+;; Add html support to jump between tags using %
+(use-package! evil-matchit
+  :config
+  (global-evil-matchit-mode 1))
+
+(after! alpheleia
+  (setf (alist-get 'web-mode alpheleia-mode-alist) 'prettier)
+  (setf (alist-get 'html-mode alpheleia-mode-alist) 'prettier)
+  (setf (alist-get 'css-mode alpheleia-mode-alist) 'prettier))
